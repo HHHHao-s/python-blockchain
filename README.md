@@ -1,37 +1,29 @@
-# python-blockchain
+﻿# python-blockchain
 
 #### 介绍
 使用python实现简单的区块链
 
-#### 软件架构
-软件架构说明
-
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  打开区块链.py
+2.  communicte.py包含了使用所有接口
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+通常，当你打开运行区块链.py,会提示你输入一个端口,回车后会提示你此区块链在网络上开放的地址，你可以使用requests库或Postman对此区块链进行交互
 
 
-#### 特技
+####  API
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+|API| 使用方法|
+|--|--|
+| /chain|GET 查看当前区块链
+ |/mine|GET 挖矿，创建一个新的区块，并奖励一个币
+ |/transactions/new|POST 新建新的交易信息，post一个json数据包括sender,receiver,amount|
+ |/nodes/register|POST 注册其他端口，当作网络邻居，保存到当前的服务端，post一个json数据包括nodes   Example:{"nodes":["http://192.168.0.5:5000"]}
+ |/nodes/resolve|GET 解决网络上区块链不同的冲突，将最长的有效链复制到当前服务端
+ 
+
+
+
